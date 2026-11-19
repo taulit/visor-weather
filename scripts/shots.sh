@@ -7,14 +7,16 @@
 #
 # Every scene is taken collapsed (the default) and with the days shown (-days).
 #
-# Usage: scripts/shots.sh [name...]   (default: all; names: weather columns compact hc de)
+# Usage: scripts/shots.sh [name...]   (default: all; names: weather columns compact hc de catalog)
 set -uo pipefail
 cd "$(dirname "$0")/.."
 source tests/shell/lib.sh
 
 if [[ "${1:-}" == --inside ]]; then
-    name="$2" out="$3" days=false
+    name="$2" out="$3" days=false focus=false
     [[ "$name" == *-days ]] && days=true name="${name%-days}"
+    # The pictures of the catalog: the section close up, on the wallpaper of Visor.
+    [[ "$name" == catalog ]] && focus=true name=weather
     inside
     mock_start
     case "$name" in
@@ -33,6 +35,8 @@ if [[ "${1:-}" == --inside ]]; then
         # here the class Visor sets for it is set by hand.
         hc-class) shell_eval "visor.notch.root.add_style_class_name('visor-hc')" >/dev/null ;;
     esac
+    # Alone in the panel, so the picture shows the module and nothing cut in half.
+    $focus && dconf write /org/gnome/shell/extensions/visor/disabled-modules "['upcoming', 'notifications']"
     gs units celsius
     place_set 'Freiburg im Breisgau' 47.99 7.85
     shell_wait_for "$weather.forecast !== null"
@@ -45,20 +49,23 @@ if [[ "${1:-}" == --inside ]]; then
         shell_wait_for "$(content_find visor-weather-day).filter(a => a.mapped).length > 0"
     fi
     sleep 0.8
-    shell_shot "$out"
+    if $focus; then shell_shot_focus "$out" visor-weather 44; else shell_shot "$out"; fi
     exit 0
 fi
 
 PATH="$repo/node_modules/.bin:$PATH" bash scripts/build.sh >/dev/null || { echo "FAIL  build"; exit 1; }
 names=("$@")
-[[ ${#names[@]} -gt 0 ]] || names=(weather columns compact hc de)
+[[ ${#names[@]} -gt 0 ]] || names=(weather columns compact hc de catalog)
 
 fail=0
 # shot NAME FILE [options of nested.sh]
 shot() {
     local name="$1" file="$2" noise
     shift 2
-    if ! nested --size 1600x1000 --log "$repo/.shell-test/shot-$name.log" "$@" -- \
+    local size=(--size 1600x1000)
+    # The catalog wants 1600x1000 too, but close up: a monitor twice as sharp.
+    [[ "$name" == catalog* ]] && size=(--size 3200x2000 --scale 2 --wallpaper "$visor_repo/scripts/assets/wallpaper.jpg")
+    if ! nested "${size[@]}" --log "$repo/.shell-test/shot-$name.log" "$@" -- \
         "$repo/scripts/shots.sh" --inside "$name" "$file" >/dev/null 2>&1; then
         echo "FAIL  ${file#"$repo"/}: the scenario did not run"
         fail=1
@@ -95,6 +102,10 @@ for name in "${names[@]}"; do
             else
                 echo "skip  weather-de-dark.png: this machine has no locale de_DE.UTF-8"
             fi
+            ;;
+        catalog)
+            shot catalog-days "$repo/catalog/$uuid/screenshot-1.png" --scheme dark
+            shot catalog-days "$repo/catalog/$uuid/screenshot-2.png" --scheme light
             ;;
         *) echo "FAIL  unknown name: $name"; fail=1 ;;
     esac
