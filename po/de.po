@@ -1,0 +1,292 @@
+# German translations for visor-weather package
+# German translation for visor-weather.
+# Copyright (C) 2026 THE visor-weather'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the visor-weather package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: visor-weather\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-19 11:13+0100\n"
+"PO-Revision-Date: 2026-11-19 10:36+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: build/module.js:53 build/module.js:289
+msgid "Weather"
+msgstr "Wetter"
+
+#: build/module.js:141
+msgid "Refresh"
+msgstr "Aktualisieren"
+
+#: build/module.js:164
+msgid "The weather is not available right now"
+msgstr "Das Wetter ist gerade nicht verfügbar"
+
+#: build/module.js:198
+msgid "Less"
+msgstr "Weniger"
+
+#: build/module.js:198
+msgid "Days"
+msgstr "Tage"
+
+#: build/module.js:288
+msgid "Weather · {place}"
+msgstr "Wetter · {place}"
+
+#: build/module.js:307
+msgid "Now"
+msgstr "Jetzt"
+
+#: build/module.js:323
+msgid "Not updated since {time}"
+msgstr "Nicht aktualisiert seit {time}"
+
+#: build/module.js:356
+msgid "{percent}%"
+msgstr "{percent} %"
+
+#: build/module.js:394
+msgid "Low {low}, high {high}"
+msgstr "Tief {low}, hoch {high}"
+
+#: build/module.js:438
+msgid "Snow all day"
+msgstr "Schnee den ganzen Tag"
+
+#: build/module.js:438
+msgid "Rain all day"
+msgstr "Regen den ganzen Tag"
+
+#: build/module.js:439
+msgid "Snow {from}–{to}"
+msgstr "Schnee {from}–{to} Uhr"
+
+#: build/module.js:439
+msgid "Rain {from}–{to}"
+msgstr "Regen {from}–{to} Uhr"
+
+#: build/place-group.js:26
+msgid "Place"
+msgstr "Ort"
+
+#: build/place-group.js:27
+msgid ""
+"The weather is shown for the place you choose here. Your location is never "
+"looked up."
+msgstr ""
+"Das Wetter wird für den Ort gezeigt, den du hier wählst. Dein Standort wird "
+"nie ermittelt."
+
+#: build/place-group.js:35
+msgid "Remove"
+msgstr "Entfernen"
+
+#: build/place-group.js:43
+msgid "No place chosen"
+msgstr "Kein Ort gewählt"
+
+#: build/place-group.js:46
+msgid "The module shows nothing and makes no request."
+msgstr "Das Modul zeigt nichts und stellt keine Anfrage."
+
+#: build/place-group.js:61
+msgid "Search for a city"
+msgstr "Stadt suchen"
+
+#: build/place-group.js:98
+msgid "Type at least two letters"
+msgstr "Gib mindestens zwei Buchstaben ein"
+
+#: build/place-group.js:101
+msgid "Searching …"
+msgstr "Suche …"
+
+#: build/place-group.js:116
+msgid "The search did not work. Check the connection and try again."
+msgstr "Die Suche hat nicht geklappt. Prüfe die Verbindung und versuche es noch einmal."
+"Die Suche hat nicht geklappt. Prüfe die Verbindung und versuche es noch "
+"einmal."
+
+#: build/place-group.js:118
+msgid "No place found"
+msgstr "Kein Ort gefunden"
+
+#: build/prefs.js:31
+msgid "General"
+msgstr "Allgemein"
+
+#: build/prefs.js:38
+msgid "Visor is not installed"
+msgstr "Visor ist nicht installiert"
+
+#: build/prefs.js:39
+msgid "This module needs Visor and does nothing without it."
+msgstr "Dieses Modul braucht Visor und tut ohne Visor nichts."
+
+#: build/prefs.js:41
+msgid "Get Visor"
+msgstr "Visor holen"
+
+#: build/prefs.js:46
+msgid "Display"
+msgstr "Anzeige"
+
+#: build/prefs.js:48
+msgid "Automatic (°F)"
+msgstr "Automatisch (°F)"
+
+#: build/prefs.js:49
+msgid "Automatic (°C)"
+msgstr "Automatisch (°C)"
+
+#: build/prefs.js:51
+msgid "Temperature"
+msgstr "Temperatur"
+
+#: build/prefs.js:52
+msgid "Automatic follows the region of the system."
+msgstr "Automatisch richtet sich nach der Region des Systems."
+
+#: build/prefs.js:53
+msgid "Celsius (°C)"
+msgstr "Celsius (°C)"
+
+#: build/prefs.js:53
+msgid "Fahrenheit (°F)"
+msgstr "Fahrenheit (°F)"
+
+#: build/prefs.js:72
+msgid "Data"
+msgstr "Daten"
+
+#: build/prefs.js:74
+msgid "Weather data by Open-Meteo"
+msgstr "Wetterdaten von Open-Meteo"
+
+#: build/prefs.js:75
+msgid "No account and no key. Only the coordinates of the place are sent."
+msgstr "Kein Konto und kein Schlüssel. Gesendet werden nur die Koordinaten des Orts."
+"Kein Konto und kein Schlüssel. Gesendet werden nur die Koordinaten des Ortes."
+
+#: build/weather.js:219
+msgid "Clear"
+msgstr "Klar"
+
+#: build/weather.js:220
+msgid "Mainly clear"
+msgstr "Überwiegend klar"
+
+#: build/weather.js:221
+msgid "Partly cloudy"
+msgstr "Teils bewölkt"
+
+#: build/weather.js:222
+msgid "Overcast"
+msgstr "Bedeckt"
+
+#: build/weather.js:223
+msgid "Fog"
+msgstr "Nebel"
+
+#: build/weather.js:224
+msgid "Freezing fog"
+msgstr "Gefrierender Nebel"
+
+#: build/weather.js:225
+msgid "Light drizzle"
+msgstr "Leichter Nieselregen"
+
+#: build/weather.js:226
+msgid "Drizzle"
+msgstr "Nieselregen"
+
+#: build/weather.js:227
+msgid "Heavy drizzle"
+msgstr "Starker Nieselregen"
+
+#: build/weather.js:228
+msgid "Light freezing drizzle"
+msgstr "Leichter gefrierender Nieselregen"
+
+#: build/weather.js:229
+msgid "Freezing drizzle"
+msgstr "Gefrierender Nieselregen"
+
+#: build/weather.js:230
+msgid "Light rain"
+msgstr "Leichter Regen"
+
+#: build/weather.js:231
+msgid "Rain"
+msgstr "Regen"
+
+#: build/weather.js:232
+msgid "Heavy rain"
+msgstr "Starker Regen"
+
+#: build/weather.js:233
+msgid "Light freezing rain"
+msgstr "Leichter gefrierender Regen"
+
+#: build/weather.js:234
+msgid "Freezing rain"
+msgstr "Gefrierender Regen"
+
+#: build/weather.js:235
+msgid "Light snow"
+msgstr "Leichter Schneefall"
+
+#: build/weather.js:236
+msgid "Snow"
+msgstr "Schneefall"
+
+#: build/weather.js:237
+msgid "Heavy snow"
+msgstr "Starker Schneefall"
+
+#: build/weather.js:238
+msgid "Snow grains"
+msgstr "Schneegriesel"
+
+#: build/weather.js:239
+msgid "Light showers"
+msgstr "Leichte Schauer"
+
+#: build/weather.js:240
+msgid "Showers"
+msgstr "Schauer"
+
+#: build/weather.js:241
+msgid "Heavy showers"
+msgstr "Starke Schauer"
+
+#: build/weather.js:242
+msgid "Light snow showers"
+msgstr "Leichte Schneeschauer"
+
+#: build/weather.js:243
+msgid "Snow showers"
+msgstr "Schneeschauer"
+
+#: build/weather.js:244
+msgid "Thunderstorm"
+msgstr "Gewitter"
+
+#: build/weather.js:245 build/weather.js:246
+msgid "Thunderstorm with hail"
+msgstr "Gewitter mit Hagel"
+
+#~ msgid "High {high}, low {low}"
+#~ msgstr "Höchstwert {high}, Tiefstwert {low}"
+
+#~ msgid "Feels like {temperature}"
+#~ msgstr "Gefühlt {temperature}"

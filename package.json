@@ -1,0 +1,35 @@
+{
+  "name": "visor-weather",
+  "version": "0.1.0",
+  "description": "Weather module for Visor, the notch for GNOME Shell",
+  "private": true,
+  "type": "module",
+  "license": "GPL-2.0-or-later",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "pack:zip": "bash scripts/pack.sh",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "pot": "bash scripts/update-pot.sh",
+    "sync:sdk": "bash scripts/sync-sdk.sh",
+    "test": "vitest run",
+    "test:shell": "bash scripts/shell-tests.sh",
+    "shots": "bash scripts/shots.sh"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@girs/gjs": "^4.1.0",
+    "@girs/gnome-shell": "50.0.4",
+    "@girs/soup-3.0": "4.9.0",
+    "eslint": "^9.0.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^3.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+build
+dist
+po
+node_modules
+pnpm-lock.yaml
+src/visor

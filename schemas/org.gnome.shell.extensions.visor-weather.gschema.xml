@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="visor-weather">
+  <schema id="org.gnome.shell.extensions.visor-weather" path="/org/gnome/shell/extensions/visor-weather/">
+    <key name="place-name" type="s">
+      <default>''</default>
+      <summary>Name of the place</summary>
+      <description>The place whose weather is shown, as chosen in the settings window. Empty means no place: the module shows nothing and makes no request.</description>
+    </key>
+    <key name="place-latitude" type="d">
+      <range min="-90" max="90"/>
+      <default>0</default>
+      <summary>Latitude of the place</summary>
+      <description>In degrees, rounded to two decimals (about one kilometre).</description>
+    </key>
+    <key name="place-longitude" type="d">
+      <range min="-180" max="180"/>
+      <default>0</default>
+      <summary>Longitude of the place</summary>
+      <description>In degrees, rounded to two decimals (about one kilometre).</description>
+    </key>
+    <key name="units" type="s">
+      <choices>
+        <choice value="auto"/>
+        <choice value="celsius"/>
+        <choice value="fahrenheit"/>
+      </choices>
+      <default>'auto'</default>
+      <summary>Unit of temperatures</summary>
+      <description>"auto" follows the region of the system: Fahrenheit where it is in everyday use, Celsius everywhere else.</description>
+    </key>
+    <key name="forecast-url" type="s">
+      <default>'https://api.open-meteo.com/v1/forecast'</default>
+      <summary>Address of the forecast API</summary>
+      <description>The forecast endpoint of Open-Meteo, or of an instance you host yourself. Must be https; plain http is accepted for this machine only. Anything else falls back to the default.</description>
+    </key>
+    <key name="geocoding-url" type="s">
+      <default>'https://geocoding-api.open-meteo.com/v1/search'</default>
+      <summary>Address of the place search</summary>
+      <description>The geocoding endpoint of Open-Meteo, asked only when you search a place in the settings window. Same rules as for the forecast address.</description>
+    </key>
+  </schema>
+</schemalist>

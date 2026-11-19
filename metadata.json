@@ -1,0 +1,11 @@
+{
+  "uuid": "visor-weather@taulit.github.io",
+  "name": "Visor: Weather",
+  "description": "Requires Visor. Shows the weather at a place you choose in the notch: the temperature now, the next hours and the coming days.\n\nNetwork: Open-Meteo (api.open-meteo.com for the forecast, geocoding-api.open-meteo.com when you search a place in the settings). It receives the coordinates of the place, rounded to about one kilometre, and nothing else. No account, no key, no telemetry, and no request before you choose a place.",
+  "shell-version": ["50", "51"],
+  "url": "https://github.com/taulit/visor-weather",
+  "settings-schema": "org.gnome.shell.extensions.visor-weather",
+  "gettext-domain": "visor-weather",
+  "version-name": "0.1.0",
+  "visor": { "api": 1, "slot": "ahead", "id": "weather" }
+}

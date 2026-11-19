@@ -1,0 +1,36 @@
+{
+  "$schema": "../schema/module.schema.json",
+  "uuid": "visor-weather@taulit.github.io",
+  "name": "Weather",
+  "summary": {
+    "en": "The weather at your place in the notch: now, the next hours and the coming days.",
+    "de": "Das Wetter an deinem Ort in der Notch: jetzt, die nächsten Stunden und die kommenden Tage."
+  },
+  "description": {
+    "en": "Shows the weather of one place as a section in Up Next: the temperature now with what it feels like and the high and low of today, the next six hours with the chance of rain, and the coming four days. You choose the place by name in the settings of the module; your location is never looked up. The data comes from Open-Meteo, without an account or a key: the forecast API gets the coordinates of the place, rounded to about one kilometre, and the place search gets the name you type. Nothing else is sent, nothing is stored besides the place and the unit, and there is no telemetry.",
+    "de": "Zeigt das Wetter eines Ortes als Abschnitt in „Als Nächstes“: die Temperatur jetzt mit der gefühlten Temperatur und dem Höchst- und Tiefstwert des Tages, die nächsten sechs Stunden mit der Regenwahrscheinlichkeit und die kommenden vier Tage. Den Ort wählst du in den Einstellungen des Moduls über seinen Namen; dein Standort wird nie ermittelt. Die Daten kommen von Open-Meteo, ohne Konto und ohne Schlüssel: Die Vorhersage-API erhält die Koordinaten des Ortes, auf etwa einen Kilometer gerundet, die Ortssuche den Namen, den du eintippst. Sonst wird nichts gesendet, außer Ort und Einheit nichts gespeichert, und es gibt keine Telemetrie."
+  },
+  "shows": {
+    "en": "A section with the weather now, a strip of the next six hours and a list of the coming four days with a bar from low to high.",
+    "de": "Einen Abschnitt mit dem Wetter jetzt, einer Leiste der nächsten sechs Stunden und einer Liste der kommenden vier Tage mit einem Balken vom Tiefst- zum Höchstwert."
+  },
+  "appears": {
+    "en": "Only after you chose a place in its settings. It asks for new data when the panel opens and the data is older than half an hour; without a connection it keeps the last data and says since when.",
+    "de": "Erst nachdem du in seinen Einstellungen einen Ort gewählt hast. Neue Daten holt es, wenn das Panel aufgeht und die Daten älter als eine halbe Stunde sind; ohne Verbindung behält es die letzten Daten und sagt, seit wann."
+  },
+  "slot": "ahead",
+  "author": { "name": "taulit", "url": "https://github.com/taulit" },
+  "repo": "https://github.com/taulit/visor-weather",
+  "ego_id": null,
+  "license": "GPL-2.0-or-later",
+  "api": 1,
+  "tags": ["system"],
+  "icon": "visor-weather@taulit.github.io/icon.svg",
+  "screenshots": [
+    "visor-weather@taulit.github.io/screenshot-1.png",
+    "visor-weather@taulit.github.io/screenshot-2.png"
+  ],
+  "status": "listed",
+  "verified": true,
+  "added": "2026-11-19"
+}

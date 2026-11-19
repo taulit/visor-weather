@@ -1,0 +1,152 @@
+/*
+ * Weather: a section in "Up Next". Sizes first, then the colours, which St
+ * cannot share: once for a dark panel, once for a light one and once more for
+ * high contrast, with the tokens of Visor's own stylesheet (fg, muted, faint).
+ * Visor sets .visor-dark or .visor-light, and .visor-hc, on its root.
+ */
+.visor-weather {
+  spacing: 8px;
+  padding: 2px 0 0;
+}
+
+/* --- "Days" / "Less" on the line of the heading: a kit button, made as low as the heading --- */
+.visor-weather-more .visor-weather-more-button {
+  height: 20px;
+  padding: 0 7px;
+  border-radius: 10px;
+  font-size: 8.625pt;
+  font-weight: 400;
+}
+
+/* --- now and the next hours --- */
+.visor-weather-hour {
+  spacing: 4px;
+}
+.visor-weather-hour-time {
+  font-size: 8.25pt;
+  font-feature-settings: 'tnum';
+}
+.visor-weather-icon {
+  icon-size: 17px;
+}
+.visor-weather-hour-value {
+  font-size: 9.75pt;
+  font-weight: 600;
+  font-feature-settings: 'tnum';
+}
+.visor-weather-rain {
+  font-size: 7.875pt;
+  font-feature-settings: 'tnum';
+}
+
+/* --- the coming days --- */
+.visor-weather-days {
+  spacing: 7px;
+  padding: 4px 0 2px;
+}
+.visor-weather-day {
+  spacing: 10px;
+}
+.visor-weather-day-name {
+  min-width: 34px;
+  font-size: 9pt;
+  font-weight: 600;
+}
+.visor-weather-day-text {
+  font-size: 9.375pt;
+}
+.visor-weather-rain.day {
+  min-width: 30px;
+  text-align: right;
+  font-size: 8.25pt;
+}
+.visor-weather-day-range {
+  spacing: 4px;
+}
+.visor-weather-day-low,
+.visor-weather-day-high,
+.visor-weather-day-slash {
+  font-size: 9.375pt;
+  font-feature-settings: 'tnum';
+}
+.visor-weather-day-high {
+  font-weight: 600;
+}
+
+.visor-weather-note {
+  font-size: 8.25pt;
+}
+
+/* --- colours on a dark panel --- */
+.visor-dark .visor-weather-hour-time,
+.visor-dark .visor-weather-rain,
+.visor-dark .visor-weather-day-name,
+.visor-dark .visor-weather-day-text,
+.visor-dark .visor-weather-day-low {
+  color: rgba(245, 245, 247, 0.6);
+}
+.visor-dark .visor-weather-day-slash,
+.visor-dark .visor-weather-note {
+  color: rgba(245, 245, 247, 0.36);
+}
+
+/* --- colours on a light panel --- */
+.visor-light .visor-weather-hour-time,
+.visor-light .visor-weather-rain,
+.visor-light .visor-weather-day-name,
+.visor-light .visor-weather-day-text,
+.visor-light .visor-weather-day-low {
+  color: rgba(29, 29, 31, 0.6);
+}
+.visor-light .visor-weather-day-slash,
+.visor-light .visor-weather-note {
+  color: rgba(29, 29, 31, 0.38);
+}
+
+/* --- high contrast: muted text at 80 %, as in Visor --- */
+.visor-dark.visor-hc .visor-weather-hour-time,
+.visor-dark.visor-hc .visor-weather-rain,
+.visor-dark.visor-hc .visor-weather-day-name,
+.visor-dark.visor-hc .visor-weather-day-text,
+.visor-dark.visor-hc .visor-weather-day-low,
+.visor-dark.visor-hc .visor-weather-day-slash,
+.visor-dark.visor-hc .visor-weather-note {
+  color: rgba(245, 245, 247, 0.8);
+}
+.visor-light.visor-hc .visor-weather-hour-time,
+.visor-light.visor-hc .visor-weather-rain,
+.visor-light.visor-hc .visor-weather-day-name,
+.visor-light.visor-hc .visor-weather-day-text,
+.visor-light.visor-hc .visor-weather-day-low,
+.visor-light.visor-hc .visor-weather-day-slash,
+.visor-light.visor-hc .visor-weather-note {
+  color: rgba(29, 29, 31, 0.8);
+}
+
+/* --- the rain of a day, hour by hour: a bar per hour, wet hours in blue --- */
+.visor-weather-strip {
+  spacing: 1px;
+  height: 14px;
+}
+.visor-weather-strip-hour {
+  width: 3px;
+  border-radius: 1px;
+}
+.visor-dark .visor-weather-strip-hour {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+.visor-light .visor-weather-strip-hour {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+.visor-dark .visor-weather-strip-hour.damp {
+  background-color: rgba(98, 160, 234, 0.5);
+}
+.visor-light .visor-weather-strip-hour.damp {
+  background-color: rgba(28, 113, 216, 0.45);
+}
+.visor-dark .visor-weather-strip-hour.wet {
+  background-color: #62a0ea;
+}
+.visor-light .visor-weather-strip-hour.wet {
+  background-color: #1c71d8;
+}
