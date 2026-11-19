@@ -15,7 +15,7 @@ source tests/shell/lib.sh
 if [[ "${1:-}" == --inside ]]; then
     name="$2" out="$3" days=false focus=false
     [[ "$name" == *-days ]] && days=true name="${name%-days}"
-    # The pictures of the catalog: the section close up, on the wallpaper of Visor.
+    # The pictures of the catalog: the section alone, close up, as a card on the wallpaper of Visor.
     [[ "$name" == catalog ]] && focus=true name=weather
     inside
     mock_start
@@ -49,7 +49,7 @@ if [[ "${1:-}" == --inside ]]; then
         shell_wait_for "$(content_find visor-weather-day).filter(a => a.mapped).length > 0"
     fi
     sleep 0.8
-    if $focus; then shell_shot_focus "$out" visor-weather 44; else shell_shot "$out"; fi
+    if $focus; then shell_shot_focus "$out" visor-sheet 0 --frame; else shell_shot "$out"; fi
     exit 0
 fi
 
@@ -63,8 +63,8 @@ shot() {
     local name="$1" file="$2" noise
     shift 2
     local size=(--size 1600x1000)
-    # The catalog wants 1600x1000 too, but close up: a monitor twice as sharp.
-    [[ "$name" == catalog* ]] && size=(--size 3200x2000 --scale 2 --wallpaper "$visor_repo/scripts/assets/wallpaper.jpg")
+    # The catalog wants 1600x1000 too, but close up: a monitor four times as sharp.
+    [[ "$name" == catalog* ]] && size=(--size 6400x4000 --scale 4)
     if ! nested "${size[@]}" --log "$repo/.shell-test/shot-$name.log" "$@" -- \
         "$repo/scripts/shots.sh" --inside "$name" "$file" >/dev/null 2>&1; then
         echo "FAIL  ${file#"$repo"/}: the scenario did not run"
