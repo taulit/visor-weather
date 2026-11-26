@@ -77,7 +77,7 @@ texts_of() { printf '%s' "$(content_find "$1").filter(a => a.mapped).map(a => a.
 # for the pointer leaving the panel; so `inside` moves it once before anything
 # is open, and every move is repeated until the pointer is where it should be.
 POINTER="(globalThis.weatherTest ??= (() => {
-    const pointer = Clutter.get_default_backend().get_default_seat().create_virtual_device(Clutter.InputDeviceType.POINTER_DEVICE);
+    const pointer = global.stage.context.get_backend().get_default_seat().create_virtual_device(Clutter.InputDeviceType.POINTER_DEVICE);
     const wait = ms => new Promise(r => GLib.timeout_add(GLib.PRIORITY_DEFAULT, ms, () => (r(true), false)));
     const moveTo = async (x, y) => {
         for (let i = 0; i < 20; i++) {
